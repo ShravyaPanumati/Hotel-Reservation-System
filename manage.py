@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from flask import Flask
 
 
 def main():
@@ -17,5 +18,7 @@ def main():
     execute_from_command_line(sys.argv)
 
 
+app = Flask(__name__)
 if __name__ == '__main__':
     main()
+    app.run(host='0.0.0.0')
